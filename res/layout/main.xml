@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainMenu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+idMainMenu/createNewUser"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New User" />
+
+    <Button
+        android:id="@+idMainMenu/loginButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@idMainMenu/createNewUser"
+        android:text="Login" />
+
+</LinearLayout>

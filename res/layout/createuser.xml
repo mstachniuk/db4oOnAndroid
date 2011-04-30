@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/createUserMenu"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">"
+
+    <TextView
+        android:id="@+idCreateUserMenu/loginLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Login:"/>
+    <EditText
+        android:id="@+idCreateUserMenu/loginEntry"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:layout_below="@idCreateUserMenu/loginLabel"/>
+
+    <TextView
+        android:id="@+idCreateUserMenu/passwordLabel"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:layout_below="@idCreateUserMenu/loginEntry"/>
+    <EditText
+        android:id="@+idCreateUserMenu/passwordEntry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:password="true"
+        android:layout_below="@idCreateUserMenu/passwordLabel"/>
+
+    <Button
+        android:id="@+idCreateUserMenu/createButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:layout_below="@idCreateUserMenu/passwordEntry"/>
+<!--
+    <Button
+        android:id="@+idCreateUserMenu/backButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:layout_below="@idCreateUserMenu/createButton"/>
+        -->
+
+</LinearLayout>
