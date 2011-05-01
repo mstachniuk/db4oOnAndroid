@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.blogspot.mstachniuk.android.db4o.R;
-import com.blogspot.mstachniuk.android.db4o.dao.Db4oHelper;
 
 /**
  *

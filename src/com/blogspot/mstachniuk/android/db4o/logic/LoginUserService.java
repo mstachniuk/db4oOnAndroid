@@ -31,7 +31,4 @@ public class LoginUserService {
         }
         return users.get(0);
     }
-
-    
-
 }

@@ -8,7 +8,6 @@ package com.blogspot.mstachniuk.android.db4o.logic;
 import android.content.Context;
 import com.blogspot.mstachniuk.android.db4o.dao.UserDao;
 import com.blogspot.mstachniuk.android.db4o.persistence.User;
-import com.db4o.ObjectContainer;
 import java.util.List;
 
 /**
@@ -29,9 +28,7 @@ public class CreateUserService {
         if(!users.isEmpty()) {
             throw new CanNotCreateUserException("User with login: " + login + " exist in database.");
         }
-        User user = new User();
-        user.setLogin(login);
-        user.setPassword(password);
+        User user = new User(login, password);
         userDao.saveOrUpdate(user);
     }
 

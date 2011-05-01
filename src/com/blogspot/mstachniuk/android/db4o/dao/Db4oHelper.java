@@ -16,9 +16,6 @@ public class Db4oHelper {
     private static ObjectContainer oc = null;
     private Context context;
 
-    /**
-     * @param ctx
-     */
     public Db4oHelper(Context ctx) {
         context = ctx;
     }
@@ -31,12 +28,8 @@ public class Db4oHelper {
         try {
             if (oc == null || oc.ext().isClosed()) {
                 oc = Db4oEmbedded.openFile(dbConfig(), db4oDBFullPath(context));
-                //We first load the initial data from the database
-//              ExercisesLoader.load(context, oc);
             }
-
             return oc;
-
         } catch (Exception ie) {
             Log.e(Db4oHelper.class.getName(), ie.toString());
             return null;
@@ -48,9 +41,6 @@ public class Db4oHelper {
      */
     private EmbeddedConfiguration dbConfig() throws IOException {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
-//           configuration.common().objectClass(Exercise.class).objectField("name").indexed(true);
-//           configuration.common().objectClass(Exercise.class).cascadeOnUpdate(true);
-//           configuration.common().objectClass(Exercise.class).cascadeOnActivate(true);
         return configuration;
     }
 
