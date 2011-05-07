@@ -24,7 +24,7 @@ public class CreateUserService {
 
     public void createUser(String login, String password) throws CanNotCreateUserException {
         UserDao userDao = new UserDao(context);
-        List<User> users = userDao.getByName(login);
+        List<User> users = userDao.getByLogin(login);
         if(!users.isEmpty()) {
             throw new CanNotCreateUserException("User with login: " + login + " exist in database.");
         }

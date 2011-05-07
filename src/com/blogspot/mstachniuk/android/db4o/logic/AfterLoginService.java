@@ -14,21 +14,16 @@ import java.util.List;
  *
  * @author staszek
  */
-public class LoginUserService {
+public class AfterLoginService {
 
     private Context context;
 
-    public LoginUserService(Context context) {
+    public AfterLoginService(Context context) {
         this.context = context;
     }
 
-    public User loginUser(String login, String password) throws CanNotLoginUserException {
+    public List<User> getAllUsers() {
         UserDao userDao = new UserDao(context);
-        List<User> users = userDao.getByLoginAndPassword(login, password);
-        if(users.size() != 1) {
-            throw new CanNotLoginUserException("I can't login user, becouse in database exist "
-                    + users.size() + " users with this same data.");
-        }
-        return users.get(0);
+        return userDao.getAll();
     }
 }

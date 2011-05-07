@@ -23,8 +23,8 @@ public class User {
         return login;
     }
 
-    public void setLogin(String name) {
-        this.login = name;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {

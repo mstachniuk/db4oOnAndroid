@@ -35,13 +35,13 @@ public class UserDao {
         return db.query(User.class);
     }
     
-    public List<User> getByName(String name) {
-        User example = new User(name, null);
+    public List<User> getByLogin(String login) {
+        User example = new User(login, null);
         return db.queryByExample(example);
     }
 
-    public List<User> getByNameAndPassword(String name, String password) {
-        User example = new User(name, password);
+    public List<User> getByLoginAndPassword(String login, String password) {
+        User example = new User(login, password);
         return db.queryByExample(example);
     }
 }

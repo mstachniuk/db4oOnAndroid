@@ -20,11 +20,7 @@ public class Db4oHelper {
         context = ctx;
     }
 
-    /**
-     * Create, open and close the database
-     */
     public ObjectContainer db() {
-
         try {
             if (oc == null || oc.ext().isClosed()) {
                 oc = Db4oEmbedded.openFile(dbConfig(), db4oDBFullPath(context));
@@ -36,24 +32,15 @@ public class Db4oHelper {
         }
     }
 
-    /**
-     * Configure the behavior of the database
-     */
     private EmbeddedConfiguration dbConfig() throws IOException {
         EmbeddedConfiguration configuration = Db4oEmbedded.newConfiguration();
         return configuration;
     }
 
-    /**
-     * Returns the path for the database location
-     */
     private String db4oDBFullPath(Context ctx) {
-        return ctx.getDir("data", 0) + "/" + "pumpup.db4o";
+        return ctx.getDir("data", 0) + "/" + "database.db4o";
     }
 
-    /**
-     * Closes the database
-     */
     public void close() {
         if (oc != null) {
             oc.close();
