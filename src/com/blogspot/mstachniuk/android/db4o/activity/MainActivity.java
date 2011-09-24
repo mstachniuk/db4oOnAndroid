@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import com.blogspot.mstachniuk.android.db4o.R;
+import com.blogspot.mstachniuk.android.db4o.dao.Db4oHelper;
 
 /**
  *
@@ -48,5 +49,13 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        Db4oHelper db4oHelper = new Db4oHelper(this);
+        db4oHelper.close();
+        super.onDestroy();
+    }
+
 
 }
